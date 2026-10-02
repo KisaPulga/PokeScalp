@@ -1,1 +1,3 @@
 # PokeScalp
+
+App gestion pokémon
