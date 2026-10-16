@@ -12,11 +12,13 @@ export async function updateSession(request: NextRequest) {
         getAll() {
           return request.cookies.getAll()
         },
+        //permet de set les cookies de supabase dans la réponse et dans la requête
         setAll(
             cookiesToSet: { name: string; value: string; options: CookieOptions }[], 
             headers: Record<string, string>
         ) {
           cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          //Permet de créer une nouvelle réponse NextResponse avec les cookies mis à jour (Middleware proxy)
           supabaseResponse = NextResponse.next({
             request,
           })
@@ -30,6 +32,7 @@ export async function updateSession(request: NextRequest) {
       },
     }
   )
+  //GetClaims récupère le JWT (vérifie si c'est valide...) et avec setAll met à jour les cookies correspondants
   const { data } = await supabase.auth.getClaims()
   const user = data?.claims
   if (

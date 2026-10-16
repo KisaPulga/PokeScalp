@@ -21,8 +21,6 @@ export async function createClient() {
 // Explication : 
 
 // Adaptateur cookies : fait le pont entre Supabase et les cookies Next.js.
-// getAll → Supabase lit la session (JWT + refresh token) depuis la requête
-// setAll → Supabase écrit la session au login, logout ou refresh du token
 
 
 // Info : Un cookie http contient ça : 
