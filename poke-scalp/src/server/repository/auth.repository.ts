@@ -9,5 +9,10 @@ export const authRepository = {
     async signUp(email: string, password: string){
         const supabase = await createClient();
         return supabase.auth.signUp({email, password});
+    },
+    async getCurrentUser() {
+        const supabase = await createClient();
+        const { data: { user } } = await supabase.auth.getUser();
+        return user;
     }
 }

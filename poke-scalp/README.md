@@ -16,6 +16,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Supabase configuration
+
+Create a `.env.local` file in the project root by copying `.env.example`, then replace the placeholder values with your Supabase project's URL and publishable key. You can find them in the Supabase dashboard under **Project Settings > API**.
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_your_key
+```
+
+Restart the Next.js development server after changing `.env.local`. Do not use a `service_role` or secret key for `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

@@ -21,6 +21,10 @@ export const authService = {
             }
             throw new BusinessError("Erreur lors de l'inscription");
         }
-    }
+    },
+    async getCurrentUserEmail() {
+        const user = await authRepository.getCurrentUser();
+        return user?.email ?? null;
+        }
 }
 

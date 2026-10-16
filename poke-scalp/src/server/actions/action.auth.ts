@@ -29,7 +29,7 @@ export async function signInAction(
 
   // 3. Rediriger
   revalidatePath("/", "layout");
-  redirect("/");
+  redirect("/main");
 }
 
 export async function signUpAction(
