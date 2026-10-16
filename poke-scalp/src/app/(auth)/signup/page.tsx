@@ -1,12 +1,13 @@
 
 "use client"
+import "./page.css";
 import { useActionState } from "react";
 import { signUpAction } from "@/src/server/actions/action.auth";
 
 export default function SignUp() {
   const [state, action, pending] = useActionState(signUpAction, null);
   return (
-    <div>
+    <div className="signup-container">
       <h1>Sign Up</h1>
       <form action={action}>
         <label>

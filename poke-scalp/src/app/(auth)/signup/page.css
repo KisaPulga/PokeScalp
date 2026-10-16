@@ -1,0 +1,8 @@
+/* c'est une inscription utilisateur pour un site de scalp pokemon fait un style : basic pour cette page de conneixon */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

@@ -1,4 +1,5 @@
 "use client"
+import "./page.css";
 import { useActionState } from "react";
 import { signInAction } from "@/src/server/actions/action.auth";
 export default function SignIn() {
@@ -7,7 +8,7 @@ export default function SignIn() {
   //action est actionAuth.signIn enveloppé par react et prevState est l'état précédent de l'action (null ici)
   const [state, action, pending] = useActionState(signInAction, null);
   return (
-    <div>
+    <div className="signin-container">
       <h1>Sign In</h1>
       <form action={action}>
         <label>

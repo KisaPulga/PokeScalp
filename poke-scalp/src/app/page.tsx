@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import "./page.css";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="home-container">
       <Image
         src="/logo.svg"
         width={200}
@@ -14,7 +14,7 @@ export default function Home() {
       <Link href="/signin" className="mt-4 text-blue-500 hover:underline">
         Sign In
       </Link>
-      <Link href="/signup" className="mt-4 text-blue-500 hover:underline">
+      <Link href="/signup">
         Sign Up
       </Link>
     </div>
