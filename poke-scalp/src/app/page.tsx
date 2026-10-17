@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./page.css";
 export default function Home() {
   return (
-    <div className="home-container">
+    <div className="home-container dark">
       <Image
         src="/logo.svg"
         width={200}

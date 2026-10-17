@@ -1,3 +1,5 @@
+@import "./globals.css";
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -17,26 +19,26 @@
     font-size: 1rem;
     letter-spacing: 0.02em;
     text-decoration: none;
-    background: linear-gradient(135deg, #0070f3 0%, #0050c8 100%);
+    background: linear-gradient(135deg, var(--main_zero) 0%, var(--main_cent) 100%);
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0, 112, 243, 0.35);
+    box-shadow: 0 4px 14px rgba(var(--shadow), 0.35);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
 
 .home-container a:hover {
-    background: linear-gradient(135deg, #1a85ff 0%, #0060e0 100%);
-    box-shadow: 0 6px 20px rgba(0, 112, 243, 0.5);
+    background: linear-gradient(135deg, var(--main_zero_hover) 0%, var(--main_cent_hover) 100%);
+    box-shadow: 0 6px 20px rgba(var(--shadow), 0.5);
     transform: translateY(-2px);
 }
 
 .home-container a:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 112, 243, 0.35);
+    box-shadow: 0 2px 8px rgba(var(--shadow), 0.35);
 }
 
 .home-container a:focus-visible {
-    outline: 3px solid rgba(0, 112, 243, 0.4);
+    outline: 3px solid rgba(var(--shadow), 0.4);
     outline-offset: 3px;
 }
