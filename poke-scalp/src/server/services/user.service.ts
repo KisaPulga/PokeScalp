@@ -1,12 +1,12 @@
 import "server-only"
-import { authRepository } from "../repository/auth.repository"
+import { userRepository } from "../repository/user.repository"
+import { redirect } from "next/dist/client/components/navigation";
 
-export const authService = {
 
-    async getCurrentUserEmail() {
-        const user = await authRepository.getCurrentUser();
-        return user?.email ?? null;
-        }
+export async function requireUser() {
+  const user = await userRepository.getCurrentUser();
+  if (!user) redirect("/signin");
+  return user;
 }
 
 
