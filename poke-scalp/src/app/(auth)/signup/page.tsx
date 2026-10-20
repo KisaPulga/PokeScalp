@@ -2,7 +2,7 @@
 "use client"
 import "./page.css";
 import { useActionState } from "react";
-import { signUpAction } from "@/src/server/actions/action.auth";
+import { signUpAction } from "@/src/server/actions/auth.action";
 
 export default function SignUp() {
   const [state, action, pending] = useActionState(signUpAction, null);

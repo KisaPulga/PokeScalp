@@ -1,7 +1,7 @@
 "use client"
 import "./page.css";
 import { useActionState } from "react";
-import { signInAction } from "@/src/server/actions/action.auth";
+import { signInAction } from "@/src/server/actions/auth.action";
 export default function SignIn() {
   //pending true/false selon si l'action est en cours d'exécution
   //state contient l'état de l'action (erreur éventuelle) ce qui est renvoyé à l'utilisateur
