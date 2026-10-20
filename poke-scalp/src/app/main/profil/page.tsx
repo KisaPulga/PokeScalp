@@ -1,9 +1,7 @@
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
-import { authService } from "@/src/server/services/auth.service";
 import { connection } from "next/server";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { requireUser } from "@/src/server/services/auth.service";
 
 export default function Profil() {
   return (
@@ -15,17 +13,12 @@ export default function Profil() {
 
 async function ProfilContent() {
   await connection();
-
-  const email = await authService.getCurrentUserEmail();
-
-  if (!email) {
-    redirect("/signin");
-  }
+  const user = await requireUser();
 
   return (
     <div>
       <h1 className="text-3xl font-bold underline">
-        Connecté user : {email}
+        Connecté user : {user.email}
       </h1>
       <Button>
         Test

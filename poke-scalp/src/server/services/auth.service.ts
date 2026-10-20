@@ -1,6 +1,7 @@
 import "server-only"
 import { authRepository } from "../repository/auth.repository"
 import { BusinessError } from "../error";
+import { redirect } from "next/dist/client/components/navigation";
 export const authService = {
     async signIn(email: string, password: string)
     {
@@ -26,5 +27,11 @@ export const authService = {
         const user = await authRepository.getCurrentUser();
         return user?.email ?? null;
         }
+}
+
+export async function requireUser() {
+  const user = await authRepository.getCurrentUser();
+  if (!user) redirect("/signin");
+  return user;
 }
 
