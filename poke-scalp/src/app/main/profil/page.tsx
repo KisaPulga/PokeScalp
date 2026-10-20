@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
 import { Button } from "@/components/ui/button";
-import { requireUser } from "@/src/server/services/auth.service";
+import { requireUser } from "@/src/server/services/user.service";
 
 export default function Profil() {
   return (
