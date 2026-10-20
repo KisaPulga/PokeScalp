@@ -1,28 +1,54 @@
-import { Suspense } from "react";
-import { redirect } from "next/navigation";
-import { authService } from "@/src/server/services/auth.service";
-import { connection } from "next/server";
+import { Card } from "@/components/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { FluxChoice } from "@/components/ui/fluxchoice";
 
-export default function Main() {
+export default function MainContent() {
   return (
-    <Suspense fallback={<p>Chargement du compte...</p>}>
-      <CurrentUser />
-    </Suspense>
-  );
-}
+    <div>
 
-async function CurrentUser() {
-  await connection();
+      <FluxChoice
+        name="flux"
+        defaultValue="tout"
+        choices={[
+          {
+            value: "scalp",
+            title: "Scalp",
+          },
+          {
+            value: "collection",
+            title: "Collection",
+          },
+          {
+            value: "tout",
+            title: "Tout",
+          },
+        ]}
+      />
+      <br/>
 
-  const email = await authService.getCurrentUserEmail();
+      <FluxChoice
+        name="flux"
+        defaultValue="toutav"
+        choices={[
+          {
+            value: "achat",
+            title: "Achat",
+          },
+          {
+            value: "vente",
+            title: "Vente",
+          },
+          {
+            value: "toutav",
+            title: "Tout",
+          },
+        ]}
+      />
+      <Card className="mt-4 p-4">
+        <h1 className="text-2xl font-bold">ITEM + SERIE</h1>
+        <p>This is the main content area.</p>
+      </Card>
+    </div>
 
-  if (!email) {
-    redirect("/signin");
-  }
-
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Connecté user : {email}
-    </h1>
   );
 }
