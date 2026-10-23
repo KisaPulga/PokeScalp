@@ -1,5 +1,5 @@
 import "server-only"
-import {createClient} from '@/lib/supabase/server'
+import {createClient} from '@/src/lib/supabase/server'
 
 export const authRepository = {
     async signIn(email: string, password: string) {
