@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { authService } from "../services/auth.service";
-import { signInSchema, signUpSchema } from "@/lib/validations/auth.schema";
+import { signInSchema, signUpSchema } from "@/src/lib/validations/auth.schema";
 import { BusinessError } from "../error";
 
 export type ActionState = { error?: string; message?: string } | null;
